@@ -17,13 +17,13 @@ body{
   background-color: white;
   display: flex;
   justify-content: space-between;
-  padding: 20px 20px; /* Adjust the padding to increase the height */
+  padding: 15px 20px; /* Adjust the padding to increase the height */
   border-bottom: 2px solid #ccc;
   
 }
 
 .company-name {
-  color: #4e54c8; /* Color of the company name */
+  color: rgb(255, 128, 0); /* Color of the company name */
   font-weight: bold;
   font-size: 30px;
   margin-left: 100px;
@@ -34,11 +34,13 @@ body{
 }
 .navbar-links a {
   color: black; /* Color of the links except Home */
-  margin-left: 30px;
-  text-decoration: none;
-  font-size: 20px;
-  font-weight: bold;
-  cursor: pointer;
+margin-left: 30px;
+  text-decoration:none ;
+  font-size: 20px ;
+  font-weight: bold ;
+  cursor: pointer ;
+   z-index: 1; 
+    position: relative;
 }
 
 .navbar-links a.home-link {
@@ -46,7 +48,7 @@ body{
 }
 
 .navbar-links a:hover {
-  color: #333; /* Color on hover */
+  color: rgb(255, 128, 0); /* Color on hover */
 }
 
 
@@ -61,7 +63,7 @@ body{
     
 }
 .area{
-    background: #4e54c8;  
+    background: rgb(0, 0, 0);  
     background: -webkit-linear-gradient(to left, #8f94fb, #4e54c8);  
     width: 100%;
     height:100vh;
@@ -83,7 +85,7 @@ body{
     list-style: none;
     width: 20px;
     height: 20px;
-    background: rgba(255, 255, 255, 0.2);
+    background: rgb(250, 177, 10);
     animation: animate 25s linear infinite;
     bottom: -150px;
     
@@ -202,3 +204,216 @@ body{
   animation: typing 3s steps(40, end)forwards;
 }
 
+
+/* css code for profile form of dashboard*/
+ #registration-form {
+    font-family:'Open Sans Condensed', sans-serif;
+    width: 600px;
+    min-width:350px;
+    margin: 5px auto;
+    position: relative;
+    
+  }
+  
+  #registration-form .fieldset {
+    background-color:rgb(255, 255, 255);
+  
+    border-radius: 3px;
+    
+  }
+  
+   #registration-form legend {
+    text-align: center;
+    background: #364351;
+    width: 100%;
+    height: 60px;
+    padding: 10px 0;
+    border-radius: 3px 3px 0 0;
+    color: white;
+  font-size:2em;
+  }
+  
+  .fieldset form{
+    border:1px solid #dcdcdc;
+    margin:0 auto;
+    margin-bottom: 1-pxpx;
+    display:block;
+    width:100%;
+    padding:10px 20px;
+    box-sizing:border-box;
+    border-radius:0 0 3px 3px;
+  }
+  label{
+    color: rgb(42, 42, 42);
+  }
+  .placeholder #registration-form label {
+    display: none;
+  }
+   .no-placeholder #registration-form label{
+  margin-left:5px;
+    position:relative;
+    display:block;
+    color:rgb(247, 244, 244);
+    text-shadow:0 1px white;
+    font-weight:bold;
+  }
+  /* all */
+  ::-webkit-input-placeholder { text-shadow:1px 1px 1px white; font-weight:bold; }
+  ::-moz-placeholder { text-shadow:0 1px 1px white; font-weight:bold; } /* firefox 19+ */
+  :-ms-input-placeholder { text-shadow:0 1px 1px white; font-weight:bold; } /* ie */
+  #registration-form input[type="date"],
+#registration-form input[type="password"],
+  #registration-form input[type=text] {
+    padding: 15px 20px;
+    border-radius: 1px;
+    margin:5px auto;
+    background-color:#f7f7f7;
+    border: 1px solid silver;
+  
+    -webkit-box-shadow: inset 0 1px 5px rgba(0,0,0,0.2);
+    box-shadow: inset 0 1px 5px rgba(0,0,0,0.2), 0 1px rgba(255,255,255,.8);
+    width: 100%;
+  
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition:background-color .5s ease;
+  -moz-transition:background-color .5s ease;
+  -o-transition:background-color .5s ease;
+  -ms-transition:background-color .5s ease;
+  transition:background-color .5s ease;
+  }
+  
+  
+  
+  .no-placeholder #registration-form input[type=text] {
+    padding: 10px 20px;
+  }
+  
+  #registration-form input[type=text]:active, .placeholder #registration-form input[type=text]:focus {
+    outline: none;
+    border-color: silver;
+    background-color:white;
+  }
+  
+  #registration-form input[type=submit] {
+    font-family:'Open Sans Condensed', sans-serif;
+    text-transform:uppercase;
+    outline:none;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 50%;
+    background-color: #dda108;
+    padding: 10px;
+    color: white;
+    border: 1px solid #906b07;
+    border-radius: 3px;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-top: 5px;
+    cursor: pointer;
+    position:relative;
+    top:0;
+    margin-left:25%;
+  }
+  
+  #registration-form input[type=submit]:hover {
+    background-color: #2196f3;
+  }
+  
+  #registration-form input[type=submit]:active {
+  background:#5C8CA7;
+  }
+  
+  
+  .parsley-error-list{
+  background-color:#C34343;
+  padding: 5px 11px;
+  margin: 0;
+  list-style: none;
+  border-radius: 0 0 3px 3px;
+  margin-top:-5px;
+    margin-bottom:5px;
+    color:white;
+    border:1px solid #870d0d;
+    border-top:none;
+      -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    position:relative;
+    top:-1px;
+    text-shadow:0px 1px 1px #460909;
+      font-weight:700;
+    font-size:12px;
+  }
+  .parsley-error{
+    border-color:#870d0d!important;
+    border-bottom:none;
+  }
+  #registration-form select{
+    width:100%;
+    padding:5px;
+  }
+  ::-moz-focus-inner {
+    border: 0;
+  }
+  
+  .content {
+    flex-grow: 1;
+    padding: 10px;
+  }
+  /* dashboard design*/
+  .dashboard {
+    display: flex;
+    justify-content: space-around;
+    margin: 0 auto;
+    max-width: 1000px;
+  }
+  
+  .box {
+    padding: 20px;
+    margin: 20px;
+    width: 23%;
+    transition: transform 0.2s;
+    /* Gradient background */
+    background: linear-gradient(135deg, #ff8a00, #e52e71);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 20px; /* Adjust the border-radius for desired shape */
+  }
+  
+  .box:hover {
+    transform: translateY(-5px);
+  }
+  
+  .box h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .box p {
+    margin: 0;
+    padding: 0;
+    color: #ffffff; /* Set text color to white */
+  }
+  
+  /* Colors for different boxes */
+  .box-total {
+    background: linear-gradient(135deg, #f7c947, #ff8a00);
+  }
+  
+  .box-current {
+    background: linear-gradient(135deg, #42a5f5, #2196f3);
+  }
+  
+  .box-total:hover {
+    background: linear-gradient(135deg, #f4b400, #ff8a00);
+  }
+  
+  .box-current:hover {
+    background: linear-gradient(135deg, #1976d2, #2196f3);
+  }
+  
+  
