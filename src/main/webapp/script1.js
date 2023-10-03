@@ -119,18 +119,18 @@ function changeContent(contentId) {
     <div id="registration-form">
   <div class='fieldset'>
     <legend>Change Password</legend>
-    <form action="#" method="post" data-validate="parsley">
+    <form action="ChangePasswordServlet" method="post" data-validate="parsley">
       <div class='row'>
         <label for='firstname'>Current password</label>
-        <input type="password" placeholder="........." name='firstname' id='firstname' data-required="true" data-error-message="Your First Name is required">
+        <input type="password" placeholder="........." name='currentPassword' id='firstname' data-required="true" data-error-message="Your First Name is required">
       </div>
       <div class='row'>
         <label for="email">New password</label>
-        <input type="password" placeholder=".........."  name='email' data-required="true" data-type="email" data-error-message="Your E-mail is required">
+        <input type="password" placeholder=".........."  name='newPassword' data-required="true" data-type="email" data-error-message="Your E-mail is required">
       </div>
       <div class='row'>
         <label for="cemail">confirm password</label>
-        <input type="password" placeholder=".........." name='cemail' data-required="true" data-error-message="Your E-mail must correspond">
+        <input type="password" placeholder=".........." name='confirmPassword' data-required="true" data-error-message="Your E-mail must correspond">
       </div>
       
       <input type="submit" value="Change">
@@ -160,7 +160,21 @@ function changeContent(contentId) {
       </div>
       
       <input type="submit" value="Add">
+      
     </form>
+     <script>
+  const urlParams = new URLSearchParams(window.location.search);
+  const successMessage = urlParams.get('success');
+  const errorMessage = urlParams.get('error');
+
+  if (successMessage) {
+    alert("Password updated successfully: " + successMessage);
+  }
+
+  if (errorMessage) {
+    alert("Error: " + errorMessage);
+  }
+</script>
   </div>
 </div>
   `;

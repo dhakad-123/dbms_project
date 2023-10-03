@@ -13,9 +13,17 @@
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 		<link rel="stylesheet" href="sidebar-01/css/style.css">
 		<link rel="stylesheet" href="homepage.css">
-		<script type="text/javascript"  src="script1.js">
-		
-		</script>
+		<script type="text/javascript"  src="script1.js"></script>
+		<script>
+        <% String error = request.getParameter("error");
+           String success = request.getParameter("success");
+           if (error != null) {%>
+            alert('<%= error %>');
+        <%}
+           if (success != null) {%>
+            alert('<%= success %>');
+        <%} %>
+    </script>
   </head>
   <body>
 		
@@ -64,7 +72,7 @@
 	              <a href="#" onclick="changeContent('change pwd')">Change Password</a>
 	          </li>
 	          <li>
-              <a href="#">LogOut</a>
+              <a href="LogoutServlet">LogOut</a>
 	          </li>
 	          
 	        </ul>
@@ -95,7 +103,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="nav navbar-nav ml-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Home</a>
+                    <a class="nav-link" href="#"> <span style="color:green;font-size:20px;"><strong>Welcome, ${sessionScope.username}<strong</span></a>
                 </li>
                
               </ul>
@@ -135,5 +143,6 @@
     <script src="sidebar-01/js/popper.js"></script>
     <script src="sidebar-01/js/bootstrap.min.js"></script>
     <script src="sidebar-01/js/main.js"></script>
+   
   </body>
 </html>

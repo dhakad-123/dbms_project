@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>FinanceFolio</title>
 <link rel="stylesheet" href="homepage.css">
 </head>
 <body  style="background:black">
@@ -34,9 +34,18 @@
                     <li></li>
                     <li></li>
             </ul>
-    </div >
+</div >
+    <script src="script1.js"></script>  
+     <script>
+        // Check if success parameter is present in the URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const successMessage = urlParams.get('message');
+
+        if (successMessage) {
+            // Display an alert with the success message
+            alert(successMessage);
+        }
+    </script>
     
-    
-  <script src="script1.js"></script>  
 </body>
 </html>

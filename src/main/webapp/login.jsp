@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Login</title>
 <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
 		
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -26,7 +26,7 @@
   <div id="registration-form">
   <div class='fieldset'>
     <legend>Login</legend>
-    <form action="#" method="post" data-validate="parsley">
+    <form action="LoginServlet" method="post" data-validate="parsley">
       
       <div class='row'>
         <label for="email">E-mail</label>
@@ -35,11 +35,21 @@
       
       <div class='row'>
         <label for="cemail">Password</label>
-        <input type="password" placeholder="" name='cemail' data-required="true" data-error-message="Your E-mail must correspond">
+        <input type="password" placeholder="" name='password' data-required="true" data-error-message="Your E-mail must correspond">
       </div>
+      <!-- Display error message if there's an error -->
+                
+      
       <input type="submit" value="Log In">
-      <br>
-      <br>
+      <div>
+                    <% String errorMessage = request.getParameter("error"); %>
+                    <% if (errorMessage != null && !errorMessage.isEmpty()) { %>
+                        <div style="color: red;">
+                           <span style="margin-left:40%;"> <strong><%= errorMessage %></strong></span>
+                        </div>
+                    <% } %>
+                </div>
+      
       <a href="register.jsp" style="margin-left:40%;">Sign up ? if not register</a>
    
     </form>
