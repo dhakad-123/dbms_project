@@ -1,6 +1,5 @@
 package com.financeManage;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -22,7 +21,8 @@ public class RegisterServlet extends HttpServlet {
     private static final String dbUser = "dhakad123";
     private static final String dbPassword = "dhakad123";
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+    @Override
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String fullname = request.getParameter("fullname");
         String email = request.getParameter("email");

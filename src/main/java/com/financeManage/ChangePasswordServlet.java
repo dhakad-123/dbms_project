@@ -17,7 +17,8 @@ public class ChangePasswordServlet extends HttpServlet {
     private static final String dbUser = "dhakad123"; // Update with your database username
     private static final String dbPassword = "dhakad123"; // Update with your database password
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+    @Override
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String currentPassword = request.getParameter("currentPassword");
         String newPassword = request.getParameter("newPassword");
@@ -46,7 +47,7 @@ public class ChangePasswordServlet extends HttpServlet {
 
     private boolean updatePasswordInDatabase(String newPassword) {
     	 try (Connection connection = DriverManager.getConnection(jdbcURL, dbUser, dbPassword)) {
-    	        String updateQuery = "UPDATE users SET password = ? WHERE username = ?"; // Assuming username is the correct column
+    	        String updateQuery = "UPDATE users SET password = ? WHERE fullname = ?"; // Assuming username is the correct column
     	        try (PreparedStatement preparedStatement = connection.prepareStatement(updateQuery)) {
     	            preparedStatement.setString(1, newPassword);
     	            preparedStatement.setString(2, getUsernameFromSession()); // Get the username from the session

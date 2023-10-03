@@ -46,7 +46,6 @@ function eraseTagline() {
 typeTagline();
 /* code for toggling content of dashboard navbar */
 
-
 function changeContent(contentId) {
     const dynamicContent = document.getElementById('dynamic-content');
     let content = '';
@@ -90,10 +89,10 @@ function changeContent(contentId) {
     <div id="registration-form">
   <div class='fieldset'>
     <legend>Profile</legend>
-    <form action="#" method="post" data-validate="parsley">
+    <form action="UpdateProfileServlet" method="post" data-validate="parsley">
       <div class='row'>
         <label for='firstname'>Full Name</label>
-        <input type="text" placeholder="full Name" name='firstname' id='firstname' data-required="true" data-error-message="Your First Name is required">
+        <input type="text" placeholder="full Name" name='fullname' id='firstname' data-required="true" data-error-message="Your First Name is required">
       </div>
       <div class='row'>
         <label for="email">E-mail</label>
@@ -101,12 +100,9 @@ function changeContent(contentId) {
       </div>
       <div class='row'>
         <label for="cemail">Mobile Number</label>
-        <input type="text" placeholder="8467099999" name='cemail' data-required="true" data-error-message="Your E-mail must correspond">
+        <input type="text" placeholder="8467099999" name='mobileNumber' data-required="true" data-error-message="Your E-mail must correspond">
       </div>
-      <div class='row'>
-        <label for="cemail">Registration Date</label>
-        <input type="text" placeholder="2019-03-18" name='cemail' data-required="true" data-error-message="Your E-mail must correspond">
-      </div>
+   
       <input type="submit" value="Update">
     </form>
   </div>
@@ -162,19 +158,7 @@ function changeContent(contentId) {
       <input type="submit" value="Add">
       
     </form>
-     <script>
-  const urlParams = new URLSearchParams(window.location.search);
-  const successMessage = urlParams.get('success');
-  const errorMessage = urlParams.get('error');
-
-  if (successMessage) {
-    alert("Password updated successfully: " + successMessage);
-  }
-
-  if (errorMessage) {
-    alert("Error: " + errorMessage);
-  }
-</script>
+    
   </div>
 </div>
   `;
